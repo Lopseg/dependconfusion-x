@@ -48,7 +48,7 @@ class DependencyConfusion:
                 host = "http://"+str(host)
 
             response = requests.get(host)
-            time.sleep(5)
+            time.sleep(2)
             if response.status_code == 200:
                 valid_depen = 0
                 vulnerable_depen = []
