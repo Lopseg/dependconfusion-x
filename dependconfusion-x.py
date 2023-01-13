@@ -48,7 +48,7 @@ class DependencyConfusion:
                 host = "http://"+str(host)
 
             response = requests.get(host)
-            time.sleep(2)
+            time.sleep(1)
             if response.status_code == 200:
                 valid_depen = 0
                 vulnerable_depen = []
@@ -120,7 +120,7 @@ parser = argparse.ArgumentParser(
 parser.add_argument('-l', '--urls', help='File containing list of domains to scan',
                     required=True, type=argparse.FileType('r'))
 parser.add_argument(
-    "-t", "--threads", help="Number of Threads, default is 10", type=int, default=5)
+    "-t", "--threads", help="Number of Threads, default is 10", type=int, default=10)
 parser.add_argument("-s", "--slack", help="Notify using Slack Webhook URL",
                     default=False, action=argparse.BooleanOptionalAction)
 args = parser.parse_args()
